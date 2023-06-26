@@ -5,7 +5,7 @@ FROM php:latest
 WORKDIR /var/www/html
 
 # Copy the PHP files into the container
-COPY index.php /var/www/html
+COPY server.php /var/www/html
 
 # Expose the port used by your PHP application (e.g., 80 for HTTP)
 EXPOSE 80
