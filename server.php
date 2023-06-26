@@ -3,6 +3,8 @@
 chdir(__DIR__);
 $queryString = $_SERVER['REQUEST_URI'];
 
-echo $queryString;
+if ($queryString == "/adminer") {
+  include_once('adminer.php');
+}
 
 ?>
