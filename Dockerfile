@@ -1,5 +1,5 @@
 # Use a base image with PHP-FPM
-FROM php:8.1
+FROM php:8.1-fpm
 
 # Install Nginx and other necessary packages
 RUN apt-get update \
@@ -19,4 +19,4 @@ COPY index.php /var/www/html
 EXPOSE 80
 
 # Start PHP-FPM and Nginx
-CMD service php-fpm start && nginx -g 'daemon off;'
+CMD service php8.1-fpm start && nginx -g 'daemon off;'
