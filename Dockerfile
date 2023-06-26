@@ -19,4 +19,4 @@ COPY index.php /var/www/html
 EXPOSE 80
 
 # Start PHP-FPM and Nginx
-CMD service php8.1-fpm start && nginx -g 'daemon off;'
+CMD php-fpm && nginx -g 'daemon off;'
