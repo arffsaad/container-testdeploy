@@ -11,4 +11,4 @@ COPY index.php /var/www/html
 EXPOSE 80
 
 # Start the PHP server
-CMD ["php", "-S", "0.0.0.0:80"]
+CMD ["php", "-S", "0.0.0.0:80", "server.php"]
