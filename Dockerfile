@@ -1,16 +1,5 @@
 # Use a base image with PHP-FPM
-FROM php:8.1-fpm
-
-# Install Nginx and other necessary packages
-RUN apt-get update \
-    && apt-get install -y nginx \
-    && rm -rf /var/lib/apt/lists/*
-
-# Configure Nginx
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Set the working directory
-WORKDIR /var/www/html
+FROM php:8.1
 
 # Copy the PHP files into the container
 COPY index.php /var/www/html
@@ -19,4 +8,4 @@ COPY index.php /var/www/html
 EXPOSE 80
 
 # Start PHP-FPM and Nginx
-CMD php-fpm && nginx -g 'daemon off;'
+CMD ["php", "-S", "0.0.0.0:80"]
