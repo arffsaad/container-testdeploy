@@ -1,6 +1,8 @@
 <?php
 
 chdir(__DIR__);
-echo json_encode($_SERVER);
+$queryString = $_SERVER['REQUEST_URI'];
+
+echo $queryString;
 
 ?>
