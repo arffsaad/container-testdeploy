@@ -12,8 +12,5 @@ ENV MYSQL_DATABASE=myappdb
 ENV MYSQL_USER=adminApp
 ENV MYSQL_PASSWORD=1234
 
-# Copy SQL script to initialize the database and user
-COPY init.sql /docker-entrypoint-initdb.d/
-
 # Expose the default MySQL port
 EXPOSE 3306
